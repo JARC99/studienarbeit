@@ -193,5 +193,5 @@ fprintf('\t\t$EERE_{2, p=1}$ & %.2e \\\\\n', EERE_2_p1);
 fprintf('\t\t$EERE_{3, p=1}$ & %.2e \\\\\n', EERE_3_p1);
 fprintf('\t\t\\bottomrule\n');
 fprintf('\t\\end{tabular}\n');
-fprintf('\t\\caption{Grid convergence index (GCI) and error analysis.}\n');
+fprintf('\t\\caption{Eingangsgrößen und Ergebnisse der Netzkonvergenzstudie [CITAR LEITFADEN AQUÍ].}\n');
 fprintf('\\end{table}\n');
