@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+from tabulate import tabulate
+
 plt.rcParams["font.family"] = "serif"
 plt.style.use('bmh')
 
@@ -30,13 +32,18 @@ if __name__ == "__main__":
     mesh_bsize_array = np.array(mesh_bsize_list)
     eta_s_f_array = np.array(eta_s_f_list)
 
+headers = ["Name", "Mesh Body Sizing [mm]", "Isentropic Efficiency [%]"]
+table_data = list(zip(subfolder_list, mesh_bsize_array, eta_s_f_array))
+print(tabulate(table_data, headers, tablefmt="fancy_grid", numalign="right", floatfmt=(".s", ".2f",)))
+
 ax.set_xlabel("Timestep")
 ax.set_ylabel("Isentropic Efficiency [%]")
 ax.set_xlim(left=0)
 ax.set_ylim(bottom=0)
-ax.legend(labels=mesh_bsize_list, title="Mesh Body Sizing [mm]", alignment="left")
+ax.legend(labels=[f"{mesh_bsize:.2f}" for mesh_bsize in mesh_bsize_list], title="Mesh Body Sizing [mm]",
+          alignment="left")
 
-tol_val = 1.0  # %
+tol_val = 0.01  # %
 fig1, ax1 = plt.subplots(1, 1)
 ax1.errorbar(mesh_bsize_array, eta_s_f_array, yerr=eta_s_f_array * tol_val / 100, fmt="o", ecolor="gray",
              elinewidth=1.5,
@@ -49,5 +56,4 @@ ax1.legend(loc="lower right")
 
 fig.tight_layout()
 fig1.tight_layout()
-
 plt.show()
