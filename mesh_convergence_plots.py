@@ -10,7 +10,7 @@ plt.rcParams["font.family"] = "serif"
 plt.style.use('bmh')
 
 if __name__ == "__main__":
-    meshconv_dir = Path(r"..\Mesh Convergence")
+    meshconv_dir = Path(r"..\cluster_batches\Mesh_Convergence")
 
     subfolder_list = [item.name for item in meshconv_dir.iterdir() if item.is_dir()]
     eta_s_f_list = []
