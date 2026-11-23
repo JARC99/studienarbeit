@@ -1,0 +1,15 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'template_Beamer.blg'
+[45] biber:342> INFO - === Mon Nov 23, 2026, 15:41:53
+[55] Biber.pm:421> INFO - Reading 'template_Beamer.bcf'
+[97] Biber.pm:1002> INFO - Found 1 citekeys in bib section 0
+[108] Biber.pm:4487> INFO - Processing section 0
+[115] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
+[116] bibtex.pm:1713> INFO - LaTeX decoding ...
+[120] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[143] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[143] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[144] Biber.pm:4307> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
+[144] Biber.pm:4313> INFO - No sort tailoring available for locale 'de-DE'
+[145] bbl.pm:676> INFO - Writing 'template_Beamer.bbl' with encoding 'UTF-8'
+[146] bbl.pm:779> INFO - Output to template_Beamer.bbl
