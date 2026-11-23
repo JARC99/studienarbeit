@@ -18,46 +18,165 @@
 
 
 \refsection{0}
-  \datalist[entry]{nyt/global//global/global/global}
-    \entry{camareropueyo2026comparison}{inproceedings}{}{}
-      \name{author}{4}{}{%
-        {{un=0,uniquepart=base,hash=a667ad8ea256f1405375be9e9017f97c}{%
+  \datalist[entry]{none/global//global/global/global}
+    \entry{farokhi2014}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=341f4f260f2ee5139d8856c1771edb99}{%
+           family={Farokhi},
+           familyi={F\bibinitperiod},
+           given={Saeed},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Chichester}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons}%
+      }
+      \strng{namehash}{341f4f260f2ee5139d8856c1771edb99}
+      \strng{fullhash}{341f4f260f2ee5139d8856c1771edb99}
+      \strng{fullhashraw}{341f4f260f2ee5139d8856c1771edb99}
+      \strng{bibnamehash}{341f4f260f2ee5139d8856c1771edb99}
+      \strng{authorbibnamehash}{341f4f260f2ee5139d8856c1771edb99}
+      \strng{authornamehash}{341f4f260f2ee5139d8856c1771edb99}
+      \strng{authorfullhash}{341f4f260f2ee5139d8856c1771edb99}
+      \strng{authorfullhashraw}{341f4f260f2ee5139d8856c1771edb99}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{isbn}{978-1-118-80677-7}
+      \field{title}{Aircraft Propulsion}
+      \field{year}{2014}
+    \endentry
+    \entry{palkus2023low}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=6eedc0037d707470c6b0c9d6cc7f5623}{%
+           family={Pa{ł}kus},
+           familyi={P\bibinitperiod},
+           given={Kacper},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Rzeszow University of Technology}%
+      }
+      \list{location}{1}{%
+        {Rzeszów}%
+      }
+      \strng{namehash}{6eedc0037d707470c6b0c9d6cc7f5623}
+      \strng{fullhash}{6eedc0037d707470c6b0c9d6cc7f5623}
+      \strng{fullhashraw}{6eedc0037d707470c6b0c9d6cc7f5623}
+      \strng{bibnamehash}{6eedc0037d707470c6b0c9d6cc7f5623}
+      \strng{authorbibnamehash}{6eedc0037d707470c6b0c9d6cc7f5623}
+      \strng{authornamehash}{6eedc0037d707470c6b0c9d6cc7f5623}
+      \strng{authorfullhash}{6eedc0037d707470c6b0c9d6cc7f5623}
+      \strng{authorfullhashraw}{6eedc0037d707470c6b0c9d6cc7f5623}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{09}
+      \field{title}{Low Pressure Turbine efficiency increase by developing new concept of Outer Air Seal}
+      \field{type}{Ph.D. dissertation}
+      \field{year}{2023}
+    \endentry
+    \entry{camareropueyo2025reducing}{inproceedings}{}{}
+      \name{author}{7}{}{%
+        {{hash=a667ad8ea256f1405375be9e9017f97c}{%
            family={Camarero\bibnamedelima Pueyo},
            familyi={C\bibinitperiod\bibinitdelim P\bibinitperiod},
            given={Josué-Inocente},
-           giveni={J\bibinithyphendelim I\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=aef2e4044af38d1784fd02961e7cad97}{%
+           giveni={J\bibinithyphendelim I\bibinitperiod}}}%
+        {{hash=aef2e4044af38d1784fd02961e7cad97}{%
            family={Helmsen},
            familyi={H\bibinitperiod},
            given={Eike},
-           giveni={E\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=b729e43667cb6c3a54471690cc5f62c6}{%
+           giveni={E\bibinitperiod}}}%
+        {{hash=27fd97d59ce9d727624b509582ca24da}{%
+           family={Oettinger},
+           familyi={O\bibinitperiod},
+           given={Marcel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b729e43667cb6c3a54471690cc5f62c6}{%
            family={Klingl},
            familyi={K\bibinitperiod},
            given={Stefan},
-           giveni={S\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=9e764c7cb22b1357a78992a100347410}{%
+           giveni={S\bibinitperiod}}}%
+        {{hash=e36e040205d191f9923a532de470a063}{%
+           family={Junghans},
+           familyi={J\bibinitperiod},
+           given={Haris},
+           giveni={H\bibinitperiod}}}%
+        {{hash=6eedc0037d707470c6b0c9d6cc7f5623}{%
+           family={Pa{ł}kus},
+           familyi={P\bibinitperiod},
+           given={Kacper},
+           giveni={K\bibinitperiod}}}%
+        {{hash=9e764c7cb22b1357a78992a100347410}{%
            family={Wein},
            familyi={W\bibinitperiod},
            given={Lars},
-           giveni={L\bibinitperiod},
-           givenun=0}}%
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ASME}%
+      }
+      \strng{namehash}{6d0ae4265b7aa08427960474e3f41c82}
+      \strng{fullhash}{edb350938423bb842e2f75fd58ae3f49}
+      \strng{fullhashraw}{edb350938423bb842e2f75fd58ae3f49}
+      \strng{bibnamehash}{6d0ae4265b7aa08427960474e3f41c82}
+      \strng{authorbibnamehash}{6d0ae4265b7aa08427960474e3f41c82}
+      \strng{authornamehash}{6d0ae4265b7aa08427960474e3f41c82}
+      \strng{authorfullhash}{edb350938423bb842e2f75fd58ae3f49}
+      \strng{authorfullhashraw}{edb350938423bb842e2f75fd58ae3f49}
+      \field{extraname}{1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of ASME Turbo Expo 2025: Turbomachinery Technical Conference and Exposition}
+      \field{month}{06}
+      \field{number}{GT2025-151479}
+      \field{series}{GT2025}
+      \field{title}{Reducing Low-Pressure Turbine Shroud Leakage Loss by Optimizing Leakage-Mainstream Interaction}
+      \field{venue}{Memphis, Tennessee}
+      \field{year}{2025}
+    \endentry
+    \entry{camareropueyo2026comparison}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=a667ad8ea256f1405375be9e9017f97c}{%
+           family={Camarero\bibnamedelima Pueyo},
+           familyi={C\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Josué-Inocente},
+           giveni={J\bibinithyphendelim I\bibinitperiod}}}%
+        {{hash=aef2e4044af38d1784fd02961e7cad97}{%
+           family={Helmsen},
+           familyi={H\bibinitperiod},
+           given={Eike},
+           giveni={E\bibinitperiod}}}%
+        {{hash=b729e43667cb6c3a54471690cc5f62c6}{%
+           family={Klingl},
+           familyi={K\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9e764c7cb22b1357a78992a100347410}{%
+           family={Wein},
+           familyi={W\bibinitperiod},
+           given={Lars},
+           giveni={L\bibinitperiod}}}%
       }
       \strng{namehash}{6d0ae4265b7aa08427960474e3f41c82}
       \strng{fullhash}{7d818704de81a1ad864971c7ac885dda}
       \strng{fullhashraw}{7d818704de81a1ad864971c7ac885dda}
-      \strng{bibnamehash}{6d0ae4265b7aa08427960474e3f41c82}
-      \strng{authorbibnamehash}{6d0ae4265b7aa08427960474e3f41c82}
+      \strng{bibnamehash}{7d818704de81a1ad864971c7ac885dda}
+      \strng{authorbibnamehash}{7d818704de81a1ad864971c7ac885dda}
       \strng{authornamehash}{6d0ae4265b7aa08427960474e3f41c82}
       \strng{authorfullhash}{7d818704de81a1ad864971c7ac885dda}
       \strng{authorfullhashraw}{7d818704de81a1ad864971c7ac885dda}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Asian Congress on Gas Turbines 2026 (ACGT2026)}
@@ -66,6 +185,94 @@
       \field{title}{Comparison of RANS / URANS Predictions of a Bypass Channel for Enhanced Leakage Reintroduction in LP Turbines}
       \field{venue}{Toyama, Japan}
       \field{year}{2026}
+    \endentry
+    \entry{camareropueyo2026robustness}{inproceedings}{}{}
+      \name{author}{6}{}{%
+        {{hash=a667ad8ea256f1405375be9e9017f97c}{%
+           family={Camarero\bibnamedelima Pueyo},
+           familyi={C\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Josué-Inocente},
+           giveni={J\bibinithyphendelim I\bibinitperiod}}}%
+        {{hash=aef2e4044af38d1784fd02961e7cad97}{%
+           family={Helmsen},
+           familyi={H\bibinitperiod},
+           given={Eike},
+           giveni={E\bibinitperiod}}}%
+        {{hash=b729e43667cb6c3a54471690cc5f62c6}{%
+           family={Klingl},
+           familyi={K\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=27fd97d59ce9d727624b509582ca24da}{%
+           family={Oettinger},
+           familyi={O\bibinitperiod},
+           given={Marcel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=6eedc0037d707470c6b0c9d6cc7f5623}{%
+           family={Pa{ł}kus},
+           familyi={P\bibinitperiod},
+           given={Kacper},
+           giveni={K\bibinitperiod}}}%
+        {{hash=9e764c7cb22b1357a78992a100347410}{%
+           family={Wein},
+           familyi={W\bibinitperiod},
+           given={Lars},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Global Power}%
+        {Propulsion Society}%
+      }
+      \strng{namehash}{6d0ae4265b7aa08427960474e3f41c82}
+      \strng{fullhash}{26f0fc3e4f130524c500152aac349c24}
+      \strng{fullhashraw}{26f0fc3e4f130524c500152aac349c24}
+      \strng{bibnamehash}{26f0fc3e4f130524c500152aac349c24}
+      \strng{authorbibnamehash}{26f0fc3e4f130524c500152aac349c24}
+      \strng{authornamehash}{6d0ae4265b7aa08427960474e3f41c82}
+      \strng{authorfullhash}{26f0fc3e4f130524c500152aac349c24}
+      \strng{authorfullhashraw}{26f0fc3e4f130524c500152aac349c24}
+      \field{extraname}{3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of Global Power and Propulsion Society (GPPS Montreal26)}
+      \field{month}{09}
+      \field{number}{GPPS-TC-2026-0077}
+      \field{title}{Robustness Analysis and Efficiency Prediction of a Leakage Bypass Channel for Enhanced Leakage Reintroduction in Low-Pressure Turbines}
+      \field{venue}{Montreal, Canada}
+      \field{year}{2026}
+    \endentry
+    \entry{herbst2012richtlinie}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=1beb1982a2d36dca885fa3ba7925fbec}{%
+           family={Herbst},
+           familyi={H\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Institut für Turbomaschinen und Fluid-Dynamik, Leibniz Universität Hannover}%
+      }
+      \strng{namehash}{1beb1982a2d36dca885fa3ba7925fbec}
+      \strng{fullhash}{1beb1982a2d36dca885fa3ba7925fbec}
+      \strng{fullhashraw}{1beb1982a2d36dca885fa3ba7925fbec}
+      \strng{bibnamehash}{1beb1982a2d36dca885fa3ba7925fbec}
+      \strng{authorbibnamehash}{1beb1982a2d36dca885fa3ba7925fbec}
+      \strng{authornamehash}{1beb1982a2d36dca885fa3ba7925fbec}
+      \strng{authorfullhash}{1beb1982a2d36dca885fa3ba7925fbec}
+      \strng{authorfullhashraw}{1beb1982a2d36dca885fa3ba7925fbec}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{30}
+      \field{month}{8}
+      \field{note}{Stand: 30.08.2012; Letzte Änderung am 29.08.2012}
+      \field{series}{Qualitätssicherungshandbuch des TFD}
+      \field{title}{Richtlinie zur Qualitätssicherung von aerodynamischen numerischen Simulationen}
+      \field{year}{2012}
+      \field{dateera}{ce}
     \endentry
   \enddatalist
 \endrefsection

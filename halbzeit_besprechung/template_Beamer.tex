@@ -3,14 +3,12 @@
 \documentclass{beamer}
 \usetheme[width=2.4cm]{Hannover}
 
-% German language and character encoding support
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
 \usepackage{csquotes}
-\usepackage[backend=biber, style=authoryear]{biblatex}
-\addbibresource{references.bib} % Replace with your actual .bib filename
-
-\setbeamerfont{footnote}{size=\tiny}
+\usepackage[backend=biber, citestyle=numeric-comp, bibstyle=ieee, sorting=none]{biblatex}
+\addbibresource{references.bib}
+\renewcommand*{\bibfont}{\scriptsize}
 
 \AtBeginSection[]{
 	\begin{frame}{Inhaltsverzeichnis}
@@ -35,15 +33,37 @@
 		\tableofcontents
 	\end{frame}
 
-	\section{Einleitung}
-		\begin{frame}{Einleitung}
+	\section{Einleitung \& Motivation}
+		\begin{frame}{Einleitung \& Motivation}
 			\begin{itemize}
-				\item Qué son los VBH
-				\item Hasta ahora qué se ha hecho
-				\item Qué es lo novedoso que se está hacinedo
+				\item Die immer noch weit verbreite Verwendung von Gasturbinen in verschiedenen Bereichen des menschliches Leben erfordert die Weiterentwicklung dieser Systeme mit der Ziel, ihre Betriebskosten und Umweltbelastung soweit wie möglich zu reduzieren.
+				
+				\item Die Minimierung von sekundären Strömungen und Mischverluste innerhalb der Maschine bietet immer noch eine gute Gelegenheit, den thermischen Wirkungsgrad weiter zu erhöhen \cite{farokhi2014}.
+				
+
 			\end{itemize}
 		\end{frame}
 		
+		\begin{frame}{Einleitung \& Motivation}
+			\begin{itemize}
+				
+				\item In \cite{palkus2023low} wurden zwei Lösungen entwickelt, um sekundär Strömungen innerhalb den OAS von LPT zu minimieren: Front Deflectors und Vane Bleed Holes (VBH).
+				
+				\item Von diesen zwei haben sich, explorativen numerischen Studien nach, VBH bezüglich der möglichen Effizienzsteigerung  als mehr versprechend erwiesen.
+				
+				\item Die Wirkungsgrdverbesserungen mittels des VBH-Konzepts wurde in \cite{camareropueyo2025reducing,camareropueyo2026comparison,camareropueyo2026robustness} mittels numerischer Optimizationstudien als Verbesserungsmöglichkeit für LPT weiterrecherchiert und bestätigt.
+				
+				\item Analog wurde die Optimierung der Wandkontouren der Leitschaufeln einer HDT in [CITA] durchgeführt, was auch eine gewisse Effizienzstereigerung ermöglicht hat.
+			\end{itemize}
+		\end{frame}
+		
+		\begin{frame}{Einleitung \& Motivation}
+			\begin{itemize}
+				\item Das Ziel dieser Studienarbeit ist dann die numerische Untersuchung von den Effekten der Umsetzung von VBH in einer Maschine mit voher optimierter Wandkontouren.
+				
+				\item Das Endergebnis von [CITA] wurde als Referenzsetup benutzt. Drei verschiedene VBH-Fälle wurden manuell gestaltet und in allen möglichen Permutation simuliert.
+			\end{itemize}
+		\end{frame}
 		
 		
 	\section{Numerisches Setup}
@@ -59,7 +79,9 @@
 		
 		\subsection{Mesch Convergence Studies}
 			\begin{frame}{Mesh Convergence Studies}
-				% Weitere Inhalte hier einfügen
+				\begin{itemize}
+					\item Wir hben \footcite{herbst2012richtlinie}
+				\end{itemize}
 			\end{frame}
 			
 	
