@@ -56,5 +56,6 @@ ax1.legend(loc="lower right")
 
 fig.tight_layout()
 fig1.tight_layout()
+fig1.savefig(r"C:\Users\PEY-YTF\Desktop\Studienarbeit\studienarbeit\halbzeit_besprechung\graphics\mesh_convergence.png")
+fig.savefig(r"C:\Users\PEY-YTF\Desktop\Studienarbeit\studienarbeit\halbzeit_besprechung\graphics\monitor_plot.png")
 plt.show()
-plt.savefig(r"C:\Users\PEY-YTF\Desktop\Studienarbeit\studienarbeit\halbzeit_besprechung\graphics\mesh_convergence.png")
