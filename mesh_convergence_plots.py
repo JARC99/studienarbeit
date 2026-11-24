@@ -6,7 +6,7 @@ import pandas as pd
 
 from tabulate import tabulate
 
-plt.rcParams["font.family"] = "serif"
+# plt.rcParams["font.family"] = "serif"
 plt.style.use('bmh')
 
 if __name__ == "__main__":
@@ -57,3 +57,4 @@ ax1.legend(loc="lower right")
 fig.tight_layout()
 fig1.tight_layout()
 plt.show()
+plt.savefig(r"C:\Users\PEY-YTF\Desktop\Studienarbeit\studienarbeit\halbzeit_besprechung\graphics\mesh_convergence.png")
