@@ -43,7 +43,7 @@ ax.set_ylim(bottom=0)
 ax.legend(labels=[f"{mesh_bsize:.2f}" for mesh_bsize in mesh_bsize_list], title="Mesh Body Sizing [mm]",
           alignment="left")
 
-tol_val = 0.1  # %
+tol_val = 0.01  # %
 fig1, ax1 = plt.subplots(1, 1)
 ax1.errorbar(mesh_bsize_array, eta_s_f_array, yerr=eta_s_f_array * tol_val / 100, fmt="o", ecolor="gray",
              elinewidth=1.5,
@@ -56,6 +56,9 @@ ax1.legend(loc="lower right")
 
 fig.tight_layout()
 fig1.tight_layout()
-fig1.savefig(r"C:\Users\PEY-YTF\Desktop\Studienarbeit\studienarbeit\halbzeit_besprechung\graphics\mesh_convergence.png")
-fig.savefig(r"C:\Users\PEY-YTF\Desktop\Studienarbeit\studienarbeit\halbzeit_besprechung\graphics\monitor_plot.png")
 plt.show()
+
+fig.savefig(r"C:\Users\PEY-YTF\Desktop\Studienarbeit\studienarbeit\halbzeit_besprechung\graphics\monitor_plot.png",
+            dpi=300)
+fig1.savefig(r"C:\Users\PEY-YTF\Desktop\Studienarbeit\studienarbeit\halbzeit_besprechung\graphics\mesh_convergence.png",
+             dpi=300)

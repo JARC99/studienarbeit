@@ -1,0 +1,711 @@
+# Session file started:  2026/11/20 18:49:58
+# CFX-25.2
+
+# To avoid unnecessary file pre-processing and modifications, include
+# COMMAND FILE at the top of your session file.
+# If it is not included, the file is assumed to be older and will be
+# modified for backward compatibility.
+COMMAND FILE:
+  CFX Post Version = 25.2
+END
+
+VIEW:Turbo Initialisation View
+  Object Visibility List = /WIREFRAME:Wireframe, /COMPBGMESH:Diffuser_1, /\
+COMPBGMESH:Diffuser_2, /COMPBGMESH:Duct_Inlet, /COMPBGMESH:LA1, /COMPBGMESH:LA2, \
+/COMPBGMESH:LA3, /COMPBGMESH:LA4, /COMPBGMESH:LE1, /COMPBGMESH:LE2, /\
+COMPBGMESH:LE3, /COMPBGMESH:LE4, /COMPHIGHLIGHT:CAV_1, /COMPHIGHLIGHT:CAV_1b, /\
+COMPHIGHLIGHT:CAV_2, /COMPHIGHLIGHT:CAV_2a, /COMPHIGHLIGHT:CAV_2b, /\
+COMPHIGHLIGHT:CAV_3, /COMPHIGHLIGHT:CAV_3a, /COMPHIGHLIGHT:CAV_3b, /\
+COMPHIGHLIGHT:CAV_4, /COMPHIGHLIGHT:CAV_4a, /COMPHIGHLIGHT:CAV_4b, /\
+COMPHIGHLIGHT:CAV_5, /COMPHIGHLIGHT:CAV_5a, /COMPHIGHLIGHT:CAV_5b, /\
+COMPHIGHLIGHT:CAV_6, /COMPHIGHLIGHT:CAV_6a, /COMPHIGHLIGHT:CAV_6b, /\
+COMPHIGHLIGHT:CAV_7, /COMPHIGHLIGHT:CAV_7a, /COMPHIGHLIGHT:CAV_7b, /\
+COMPHIGHLIGHT:CAV_8, /COMPHIGHLIGHT:CAV_8a, /COMPHIGHLIGHT:Diffuser_1, /\
+COMPHIGHLIGHT:Diffuser_2, /COMPHIGHLIGHT:Duct_Inlet, /COMPHIGHLIGHT:LA1, /\
+COMPHIGHLIGHT:LA2, /COMPHIGHLIGHT:LA3, /COMPHIGHLIGHT:LA4, /COMPHIGHLIGHT:LE1, /\
+COMPHIGHLIGHT:LE2, /COMPHIGHLIGHT:LE2VBH, /COMPHIGHLIGHT:LE3, /\
+COMPHIGHLIGHT:LE3VBH, /COMPHIGHLIGHT:LE4, /COMPHIGHLIGHT:LE4VBH
+  Is A Figure = false
+END
+
+# Setting Single View: /VIEW:Turbo Initialisation View
+VIEWPORT MANAGER:
+  Viewport Layout = No Split
+  Maximized Viewport = -1
+END
+>setViewportView cmd=set, view=/VIEW:Turbo Initialisation View, viewport=1
+
+VIEWPORT MANAGER:
+  Synchronize Visibility = false
+END
+
+# CCL from Turbo Chart Macro begins (execute)
+> delete Hub to Shroud Surface, Hub to Shroud Line, Hub to Shroud Chart
+
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Turbo Domain List = /DOMAIN GROUP:All Domains
+  Option = Hub to Shroud
+  Streamwise Location = 5.01
+  Span = 0.5
+  Span Points = 100
+  Streamwise Points = 10
+  Theta Points = 10
+  Point Distribution Method = Equal Distance
+  Include Boundary Points = On
+  Reduction or Max Number = Max Number
+  Reduction Factor = 1.0
+  Maximum Number of Items = 10
+  Turbo Line Mode= Streamwise Location
+  Point Type = AR
+  Point 1 = 0 [m], 0 [m]
+  Point 2 = 1 [m], 0 [m]
+  Position 1 = 0.5
+  Position 2 = 0.5
+  Colour Mode = Variable
+  Colour Variable = Span Normalized
+  Circumferential Average Mode = None
+  Maximum Number of Sampling Points = 20
+
+  Line Width = 2
+END
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Colour Variable = Velocity in Stn Frame Flow Angle
+  Circumferential Average Mode = Area
+  Maximum Number of Sampling Points = 20
+
+END
+CHART:Hub to Shroud Chart
+  Chart Type = XY
+  Chart Title = Hub to Shroud Chart
+  Chart X Axis Label = (Area Average)
+  Chart Y Axis Label = Span Normalized
+  CHART SERIES: Series 1
+    Chart Line Custom Data Selection = True
+    Chart X Variable = Velocity in Stn Frame Flow Angle ACA on Hub to Shroud \
+Line
+    Chart Y Variable = Span Normalized
+    Series Name = Hub to Shroud Chart Line
+    Location = Hub to Shroud Line
+    CHART LINE: Chart Line 1
+      Line Name = Hub to Shroud Chart Line
+      Chart Line Style = Solid
+      Auto Chart Line Colour = false
+      Auto Chart Symbol Colour = false
+      Chart Line Colour = 0, 0, 1
+      Chart Symbol Colour = 0, 0, 1
+      Chart Symbol Style = Ellipse
+    END
+  END
+END
+# CCL from Turbo Chart Macro ends (execute)
+TURBO PLOTS: Hub to Shroud Chart State
+  Turbo HS Chart Plot Type = Single Line
+  Turbo HS Chart Display Option = Separate Lines
+  Turbo HS Chart Compare Axis Option = X
+END
+
+>hide /INTERNAL TURBO LINE:Hub to Shroud Line, view=/VIEW:Turbo Regions View
+
+# CCL from Turbo Chart Macro begins (execute)
+> delete Hub to Shroud Surface, Hub to Shroud Line, Hub to Shroud Chart
+
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Turbo Domain List = /DOMAIN GROUP:All Domains
+  Option = Hub to Shroud
+  Streamwise Location = 5.01
+  Span = 0.5
+  Span Points = 100
+  Streamwise Points = 10
+  Theta Points = 10
+  Point Distribution Method = Equal Distance
+  Include Boundary Points = On
+  Reduction or Max Number = Max Number
+  Reduction Factor = 1.0
+  Maximum Number of Items = 10
+  Turbo Line Mode= Streamwise Location
+  Point Type = AR
+  Point 1 = 0 [m], 0 [m]
+  Point 2 = 1 [m], 0 [m]
+  Position 1 = 0.5
+  Position 2 = 0.5
+  Colour Mode = Variable
+  Colour Variable = Span Normalized
+  Circumferential Average Mode = None
+  Maximum Number of Sampling Points = 20
+
+  Line Width = 2
+END
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Colour Variable = Turbulence Kinetic Energy
+  Circumferential Average Mode = Area
+  Maximum Number of Sampling Points = 20
+
+END
+CHART:Hub to Shroud Chart
+  Chart Type = XY
+  Chart Title = Hub to Shroud Chart
+  Chart X Axis Label = (Area Average)
+  Chart Y Axis Label = Span Normalized
+  CHART SERIES: Series 1
+    Chart Line Custom Data Selection = True
+    Chart X Variable = Turbulence Kinetic Energy ACA on Hub to Shroud Line
+    Chart Y Variable = Span Normalized
+    Series Name = Hub to Shroud Chart Line
+    Location = Hub to Shroud Line
+    CHART LINE: Chart Line 1
+      Line Name = Hub to Shroud Chart Line
+      Chart Line Style = Solid
+      Auto Chart Line Colour = false
+      Auto Chart Symbol Colour = false
+      Chart Line Colour = 0, 0, 1
+      Chart Symbol Colour = 0, 0, 1
+      Chart Symbol Style = Ellipse
+    END
+  END
+END
+# CCL from Turbo Chart Macro ends (execute)
+TURBO PLOTS: Hub to Shroud Chart State
+  Turbo HS Chart Plot Type = Single Line
+  Turbo HS Chart Display Option = Separate Lines
+  Turbo HS Chart Compare Axis Option = X
+END
+
+>hide /INTERNAL TURBO LINE:Hub to Shroud Line, view=/VIEW:Turbo Regions View
+
+# CCL from EXPORT Turbo Chart Macro
+EXPORT:
+  Export File = C:/Users/PEY-YTF/Desktop/Studienarbeit/\
+studienarbeit_10081575_V2_TH_files/user_files/TurbKE_in_H2S_LE2.csv
+  Export Chart Name = Hub to Shroud Chart
+  Overwrite = On
+END
+>export chart
+
+# CCL from Turbo Chart Macro begins (execute)
+> delete Hub to Shroud Surface, Hub to Shroud Line, Hub to Shroud Chart
+
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Turbo Domain List = /DOMAIN GROUP:All Domains
+  Option = Hub to Shroud
+  Streamwise Location = 5.99
+  Span = 0.5
+  Span Points = 100
+  Streamwise Points = 10
+  Theta Points = 10
+  Point Distribution Method = Equal Distance
+  Include Boundary Points = On
+  Reduction or Max Number = Max Number
+  Reduction Factor = 1.0
+  Maximum Number of Items = 10
+  Turbo Line Mode= Streamwise Location
+  Point Type = AR
+  Point 1 = 0 [m], 0 [m]
+  Point 2 = 1 [m], 0 [m]
+  Position 1 = 0.5
+  Position 2 = 0.5
+  Colour Mode = Variable
+  Colour Variable = Span Normalized
+  Circumferential Average Mode = None
+  Maximum Number of Sampling Points = 20
+
+  Line Width = 2
+END
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Colour Variable = Turbulence Kinetic Energy
+  Circumferential Average Mode = Area
+  Maximum Number of Sampling Points = 20
+
+END
+CHART:Hub to Shroud Chart
+  Chart Type = XY
+  Chart Title = Hub to Shroud Chart
+  Chart X Axis Label = (Area Average)
+  Chart Y Axis Label = Span Normalized
+  CHART SERIES: Series 1
+    Chart Line Custom Data Selection = True
+    Chart X Variable = Turbulence Kinetic Energy ACA on Hub to Shroud Line
+    Chart Y Variable = Span Normalized
+    Series Name = Hub to Shroud Chart Line
+    Location = Hub to Shroud Line
+    CHART LINE: Chart Line 1
+      Line Name = Hub to Shroud Chart Line
+      Chart Line Style = Solid
+      Auto Chart Line Colour = false
+      Auto Chart Symbol Colour = false
+      Chart Line Colour = 0, 0, 1
+      Chart Symbol Colour = 0, 0, 1
+      Chart Symbol Style = Ellipse
+    END
+  END
+END
+# CCL from Turbo Chart Macro ends (execute)
+TURBO PLOTS: Hub to Shroud Chart State
+  Turbo HS Chart Plot Type = Single Line
+  Turbo HS Chart Display Option = Separate Lines
+  Turbo HS Chart Compare Axis Option = X
+END
+
+>hide /INTERNAL TURBO LINE:Hub to Shroud Line, view=/VIEW:Turbo Regions View
+
+# CCL from EXPORT Turbo Chart Macro
+EXPORT:
+  Export File = C:/Users/PEY-YTF/Desktop/Studienarbeit/\
+studienarbeit_10081575_V2_TH_files/user_files/TurbKE_out_H2S_LE2.csv
+  Export Chart Name = Hub to Shroud Chart
+  Overwrite = On
+END
+>export chart
+
+# CCL from Turbo Chart Macro begins (execute)
+> delete Hub to Shroud Surface, Hub to Shroud Line, Hub to Shroud Chart
+
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Turbo Domain List = /DOMAIN GROUP:All Domains
+  Option = Hub to Shroud
+  Streamwise Location = 5.01
+  Span = 0.5
+  Span Points = 100
+  Streamwise Points = 10
+  Theta Points = 10
+  Point Distribution Method = Equal Distance
+  Include Boundary Points = On
+  Reduction or Max Number = Max Number
+  Reduction Factor = 1.0
+  Maximum Number of Items = 10
+  Turbo Line Mode= Streamwise Location
+  Point Type = AR
+  Point 1 = 0 [m], 0 [m]
+  Point 2 = 1 [m], 0 [m]
+  Position 1 = 0.5
+  Position 2 = 0.5
+  Colour Mode = Variable
+  Colour Variable = Span Normalized
+  Circumferential Average Mode = None
+  Maximum Number of Sampling Points = 20
+
+  Line Width = 2
+END
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Colour Variable = Total Pressure
+  Circumferential Average Mode = Area
+  Maximum Number of Sampling Points = 20
+
+END
+CHART:Hub to Shroud Chart
+  Chart Type = XY
+  Chart Title = Hub to Shroud Chart
+  Chart X Axis Label = (Area Average)
+  Chart Y Axis Label = Span Normalized
+  CHART SERIES: Series 1
+    Chart Line Custom Data Selection = True
+    Chart X Variable = Total Pressure ACA on Hub to Shroud Line
+    Chart Y Variable = Span Normalized
+    Series Name = Hub to Shroud Chart Line
+    Location = Hub to Shroud Line
+    CHART LINE: Chart Line 1
+      Line Name = Hub to Shroud Chart Line
+      Chart Line Style = Solid
+      Auto Chart Line Colour = false
+      Auto Chart Symbol Colour = false
+      Chart Line Colour = 0, 0, 1
+      Chart Symbol Colour = 0, 0, 1
+      Chart Symbol Style = Ellipse
+    END
+  END
+END
+# CCL from Turbo Chart Macro ends (execute)
+TURBO PLOTS: Hub to Shroud Chart State
+  Turbo HS Chart Plot Type = Single Line
+  Turbo HS Chart Display Option = Separate Lines
+  Turbo HS Chart Compare Axis Option = X
+END
+
+>hide /INTERNAL TURBO LINE:Hub to Shroud Line, view=/VIEW:Turbo Regions View
+
+# CCL from EXPORT Turbo Chart Macro
+EXPORT:
+  Export File = C:/Users/PEY-YTF/Desktop/Studienarbeit/\
+studienarbeit_10081575_V2_TH_files/user_files/Ptot_in_H2S_LE2.csv
+  Export Chart Name = Hub to Shroud Chart
+  Overwrite = On
+END
+>export chart
+
+# CCL from Turbo Chart Macro begins (execute)
+> delete Hub to Shroud Surface, Hub to Shroud Line, Hub to Shroud Chart
+
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Turbo Domain List = /DOMAIN GROUP:All Domains
+  Option = Hub to Shroud
+  Streamwise Location = 5.99
+  Span = 0.5
+  Span Points = 100
+  Streamwise Points = 10
+  Theta Points = 10
+  Point Distribution Method = Equal Distance
+  Include Boundary Points = On
+  Reduction or Max Number = Max Number
+  Reduction Factor = 1.0
+  Maximum Number of Items = 10
+  Turbo Line Mode= Streamwise Location
+  Point Type = AR
+  Point 1 = 0 [m], 0 [m]
+  Point 2 = 1 [m], 0 [m]
+  Position 1 = 0.5
+  Position 2 = 0.5
+  Colour Mode = Variable
+  Colour Variable = Span Normalized
+  Circumferential Average Mode = None
+  Maximum Number of Sampling Points = 20
+
+  Line Width = 2
+END
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Colour Variable = Total Pressure
+  Circumferential Average Mode = Area
+  Maximum Number of Sampling Points = 20
+
+END
+CHART:Hub to Shroud Chart
+  Chart Type = XY
+  Chart Title = Hub to Shroud Chart
+  Chart X Axis Label = (Area Average)
+  Chart Y Axis Label = Span Normalized
+  CHART SERIES: Series 1
+    Chart Line Custom Data Selection = True
+    Chart X Variable = Total Pressure ACA on Hub to Shroud Line
+    Chart Y Variable = Span Normalized
+    Series Name = Hub to Shroud Chart Line
+    Location = Hub to Shroud Line
+    CHART LINE: Chart Line 1
+      Line Name = Hub to Shroud Chart Line
+      Chart Line Style = Solid
+      Auto Chart Line Colour = false
+      Auto Chart Symbol Colour = false
+      Chart Line Colour = 0, 0, 1
+      Chart Symbol Colour = 0, 0, 1
+      Chart Symbol Style = Ellipse
+    END
+  END
+END
+# CCL from Turbo Chart Macro ends (execute)
+TURBO PLOTS: Hub to Shroud Chart State
+  Turbo HS Chart Plot Type = Single Line
+  Turbo HS Chart Display Option = Separate Lines
+  Turbo HS Chart Compare Axis Option = X
+END
+
+>hide /INTERNAL TURBO LINE:Hub to Shroud Line, view=/VIEW:Turbo Regions View
+
+# CCL from EXPORT Turbo Chart Macro
+EXPORT:
+  Export File = C:/Users/PEY-YTF/Desktop/Studienarbeit/\
+studienarbeit_10081575_V2_TH_files/user_files/Ptot_out_H2S_LE2.csv
+  Export Chart Name = Hub to Shroud Chart
+  Overwrite = On
+END
+>export chart
+
+# CCL from Turbo Chart Macro begins (execute)
+> delete Hub to Shroud Surface, Hub to Shroud Line, Hub to Shroud Chart
+
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Turbo Domain List = /DOMAIN GROUP:All Domains
+  Option = Hub to Shroud
+  Streamwise Location = 5.01
+  Span = 0.5
+  Span Points = 100
+  Streamwise Points = 10
+  Theta Points = 10
+  Point Distribution Method = Equal Distance
+  Include Boundary Points = On
+  Reduction or Max Number = Max Number
+  Reduction Factor = 1.0
+  Maximum Number of Items = 10
+  Turbo Line Mode= Streamwise Location
+  Point Type = AR
+  Point 1 = 0 [m], 0 [m]
+  Point 2 = 1 [m], 0 [m]
+  Position 1 = 0.5
+  Position 2 = 0.5
+  Colour Mode = Variable
+  Colour Variable = Span Normalized
+  Circumferential Average Mode = None
+  Maximum Number of Sampling Points = 20
+
+  Line Width = 2
+END
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Colour Variable = Velocity Flow Angle
+  Circumferential Average Mode = Area
+  Maximum Number of Sampling Points = 20
+
+END
+CHART:Hub to Shroud Chart
+  Chart Type = XY
+  Chart Title = Hub to Shroud Chart
+  Chart X Axis Label = (Area Average)
+  Chart Y Axis Label = Span Normalized
+  CHART SERIES: Series 1
+    Chart Line Custom Data Selection = True
+    Chart X Variable = Velocity Flow Angle ACA on Hub to Shroud Line
+    Chart Y Variable = Span Normalized
+    Series Name = Hub to Shroud Chart Line
+    Location = Hub to Shroud Line
+    CHART LINE: Chart Line 1
+      Line Name = Hub to Shroud Chart Line
+      Chart Line Style = Solid
+      Auto Chart Line Colour = false
+      Auto Chart Symbol Colour = false
+      Chart Line Colour = 0, 0, 1
+      Chart Symbol Colour = 0, 0, 1
+      Chart Symbol Style = Ellipse
+    END
+  END
+END
+# CCL from Turbo Chart Macro ends (execute)
+TURBO PLOTS: Hub to Shroud Chart State
+  Turbo HS Chart Plot Type = Single Line
+  Turbo HS Chart Display Option = Separate Lines
+  Turbo HS Chart Compare Axis Option = X
+END
+
+>hide /INTERNAL TURBO LINE:Hub to Shroud Line, view=/VIEW:Turbo Regions View
+
+# CCL from EXPORT Turbo Chart Macro
+EXPORT:
+  Export File = C:/Users/PEY-YTF/Desktop/Studienarbeit/\
+studienarbeit_10081575_V2_TH_files/user_files/alpha_in_H2S_LE2.csv
+  Export Chart Name = Hub to Shroud Chart
+  Overwrite = On
+END
+>export chart
+
+# CCL from Turbo Chart Macro begins (execute)
+> delete Hub to Shroud Surface, Hub to Shroud Line, Hub to Shroud Chart
+
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Turbo Domain List = /DOMAIN GROUP:All Domains
+  Option = Hub to Shroud
+  Streamwise Location = 5.99
+  Span = 0.5
+  Span Points = 100
+  Streamwise Points = 10
+  Theta Points = 10
+  Point Distribution Method = Equal Distance
+  Include Boundary Points = On
+  Reduction or Max Number = Max Number
+  Reduction Factor = 1.0
+  Maximum Number of Items = 10
+  Turbo Line Mode= Streamwise Location
+  Point Type = AR
+  Point 1 = 0 [m], 0 [m]
+  Point 2 = 1 [m], 0 [m]
+  Position 1 = 0.5
+  Position 2 = 0.5
+  Colour Mode = Variable
+  Colour Variable = Span Normalized
+  Circumferential Average Mode = None
+  Maximum Number of Sampling Points = 20
+
+  Line Width = 2
+END
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Colour Variable = Velocity Flow Angle
+  Circumferential Average Mode = Area
+  Maximum Number of Sampling Points = 20
+
+END
+CHART:Hub to Shroud Chart
+  Chart Type = XY
+  Chart Title = Hub to Shroud Chart
+  Chart X Axis Label = (Area Average)
+  Chart Y Axis Label = Span Normalized
+  CHART SERIES: Series 1
+    Chart Line Custom Data Selection = True
+    Chart X Variable = Velocity Flow Angle ACA on Hub to Shroud Line
+    Chart Y Variable = Span Normalized
+    Series Name = Hub to Shroud Chart Line
+    Location = Hub to Shroud Line
+    CHART LINE: Chart Line 1
+      Line Name = Hub to Shroud Chart Line
+      Chart Line Style = Solid
+      Auto Chart Line Colour = false
+      Auto Chart Symbol Colour = false
+      Chart Line Colour = 0, 0, 1
+      Chart Symbol Colour = 0, 0, 1
+      Chart Symbol Style = Ellipse
+    END
+  END
+END
+# CCL from Turbo Chart Macro ends (execute)
+TURBO PLOTS: Hub to Shroud Chart State
+  Turbo HS Chart Plot Type = Single Line
+  Turbo HS Chart Display Option = Separate Lines
+  Turbo HS Chart Compare Axis Option = X
+END
+
+>hide /INTERNAL TURBO LINE:Hub to Shroud Line, view=/VIEW:Turbo Regions View
+
+# CCL from EXPORT Turbo Chart Macro
+EXPORT:
+  Export File = C:/Users/PEY-YTF/Desktop/Studienarbeit/\
+studienarbeit_10081575_V2_TH_files/user_files/alpha_out_H2S_LE2.csv
+  Export Chart Name = Hub to Shroud Chart
+  Overwrite = On
+END
+>export chart
+
+# CCL from Turbo Chart Macro begins (execute)
+> delete Hub to Shroud Surface, Hub to Shroud Line, Hub to Shroud Chart
+
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Turbo Domain List = /DOMAIN GROUP:All Domains
+  Option = Hub to Shroud
+  Streamwise Location = 5.01
+  Span = 0.5
+  Span Points = 100
+  Streamwise Points = 10
+  Theta Points = 10
+  Point Distribution Method = Equal Distance
+  Include Boundary Points = On
+  Reduction or Max Number = Max Number
+  Reduction Factor = 1.0
+  Maximum Number of Items = 10
+  Turbo Line Mode= Streamwise Location
+  Point Type = AR
+  Point 1 = 0 [m], 0 [m]
+  Point 2 = 1 [m], 0 [m]
+  Position 1 = 0.5
+  Position 2 = 0.5
+  Colour Mode = Variable
+  Colour Variable = Span Normalized
+  Circumferential Average Mode = None
+  Maximum Number of Sampling Points = 20
+
+  Line Width = 2
+END
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Colour Variable = Mach Number
+  Circumferential Average Mode = Area
+  Maximum Number of Sampling Points = 20
+
+END
+CHART:Hub to Shroud Chart
+  Chart Type = XY
+  Chart Title = Hub to Shroud Chart
+  Chart X Axis Label = (Area Average)
+  Chart Y Axis Label = Span Normalized
+  CHART SERIES: Series 1
+    Chart Line Custom Data Selection = True
+    Chart X Variable = Mach Number ACA on Hub to Shroud Line
+    Chart Y Variable = Span Normalized
+    Series Name = Hub to Shroud Chart Line
+    Location = Hub to Shroud Line
+    CHART LINE: Chart Line 1
+      Line Name = Hub to Shroud Chart Line
+      Chart Line Style = Solid
+      Auto Chart Line Colour = false
+      Auto Chart Symbol Colour = false
+      Chart Line Colour = 0, 0, 1
+      Chart Symbol Colour = 0, 0, 1
+      Chart Symbol Style = Ellipse
+    END
+  END
+END
+# CCL from Turbo Chart Macro ends (execute)
+TURBO PLOTS: Hub to Shroud Chart State
+  Turbo HS Chart Plot Type = Single Line
+  Turbo HS Chart Display Option = Separate Lines
+  Turbo HS Chart Compare Axis Option = X
+END
+
+>hide /INTERNAL TURBO LINE:Hub to Shroud Line, view=/VIEW:Turbo Regions View
+
+# CCL from EXPORT Turbo Chart Macro
+EXPORT:
+  Export File = C:/Users/PEY-YTF/Desktop/Studienarbeit/\
+studienarbeit_10081575_V2_TH_files/user_files/Ma_in_H2S_LE2.csv
+  Export Chart Name = Hub to Shroud Chart
+  Overwrite = On
+END
+>export chart
+
+# CCL from Turbo Chart Macro begins (execute)
+> delete Hub to Shroud Surface, Hub to Shroud Line, Hub to Shroud Chart
+
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Turbo Domain List = /DOMAIN GROUP:All Domains
+  Option = Hub to Shroud
+  Streamwise Location = 5.99
+  Span = 0.5
+  Span Points = 100
+  Streamwise Points = 10
+  Theta Points = 10
+  Point Distribution Method = Equal Distance
+  Include Boundary Points = On
+  Reduction or Max Number = Max Number
+  Reduction Factor = 1.0
+  Maximum Number of Items = 10
+  Turbo Line Mode= Streamwise Location
+  Point Type = AR
+  Point 1 = 0 [m], 0 [m]
+  Point 2 = 1 [m], 0 [m]
+  Position 1 = 0.5
+  Position 2 = 0.5
+  Colour Mode = Variable
+  Colour Variable = Span Normalized
+  Circumferential Average Mode = None
+  Maximum Number of Sampling Points = 20
+
+  Line Width = 2
+END
+INTERNAL TURBO LINE:Hub to Shroud Line
+  Colour Variable = Mach Number
+  Circumferential Average Mode = Area
+  Maximum Number of Sampling Points = 20
+
+END
+CHART:Hub to Shroud Chart
+  Chart Type = XY
+  Chart Title = Hub to Shroud Chart
+  Chart X Axis Label = (Area Average)
+  Chart Y Axis Label = Span Normalized
+  CHART SERIES: Series 1
+    Chart Line Custom Data Selection = True
+    Chart X Variable = Mach Number ACA on Hub to Shroud Line
+    Chart Y Variable = Span Normalized
+    Series Name = Hub to Shroud Chart Line
+    Location = Hub to Shroud Line
+    CHART LINE: Chart Line 1
+      Line Name = Hub to Shroud Chart Line
+      Chart Line Style = Solid
+      Auto Chart Line Colour = false
+      Auto Chart Symbol Colour = false
+      Chart Line Colour = 0, 0, 1
+      Chart Symbol Colour = 0, 0, 1
+      Chart Symbol Style = Ellipse
+    END
+  END
+END
+# CCL from Turbo Chart Macro ends (execute)
+TURBO PLOTS: Hub to Shroud Chart State
+  Turbo HS Chart Plot Type = Single Line
+  Turbo HS Chart Display Option = Separate Lines
+  Turbo HS Chart Compare Axis Option = X
+END
+
+>hide /INTERNAL TURBO LINE:Hub to Shroud Line, view=/VIEW:Turbo Regions View
+
+# CCL from EXPORT Turbo Chart Macro
+EXPORT:
+  Export File = C:/Users/PEY-YTF/Desktop/Studienarbeit/\
+studienarbeit_10081575_V2_TH_files/user_files/Ma_out_H2S_LE2.csv
+  Export Chart Name = Hub to Shroud Chart
+  Overwrite = On
+END
+>export chart
+
+
+# Session file stopped:  2026/11/20 18:54:56
+

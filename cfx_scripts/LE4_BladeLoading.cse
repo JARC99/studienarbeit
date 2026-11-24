@@ -1,0 +1,164 @@
+# Session file started:  2026/11/24 17:11:00
+# CFX-25.2
+
+# To avoid unnecessary file pre-processing and modifications, include
+# COMMAND FILE at the top of your session file.
+# If it is not included, the file is assumed to be older and will be
+# modified for backward compatibility.
+COMMAND FILE:
+  CFX Post Version = 25.2
+END
+
+# CCL from Turbo Chart Macro begins (execute)
+> delete Blade Loading Surface, Blade Loading Line, Blade Loading Chart
+
+INTERNAL ISOSURFACE:Blade Loading Surface
+  Domain List = /DATA READER/CASE:Case V2_TH_LE2 LE3 LE4_001/DOMAIN:LE4
+  Value = 0.5
+  Variable = Span Normalized
+END
+INTERNAL POLYLINE:Blade Loading Line
+  Domain List = /DATA READER/CASE:Case V2_TH_LE2 LE3 LE4_001/DOMAIN:LE4
+  Option = Boundary Intersection
+  Boundary List = LE4_Blade
+  Location = Blade Loading Surface
+  Line Width = 2
+END
+CHART:Blade Loading Chart
+  Chart Type = XY
+  Chart Title = Blade Loading Chart
+  Chart X Axis Label = Streamwise (0-1)
+  Chart Y Axis Label = Total Pressure
+  CHART SERIES: Series 1
+    Chart Line Custom Data Selection = True
+    Chart X Variable = Streamwise (0-1)
+    Chart Y Variable = Total Pressure
+    Series Name = Blade Loading Chart Line
+    Location = Blade Loading Line
+    CHART LINE: Chart Line 1
+      Line Name = Blade Loading Chart Line
+      Chart Line Style = None
+      Auto Chart Line Colour = false
+      Auto Chart Symbol Colour = false
+      Chart Line Colour = 0, 0, 1
+      Chart Symbol Colour = 0, 0, 1
+      Chart Symbol Style = Ellipse
+    END
+  END
+END
+# CCL from Turbo Chart Macro ends (execute)
+
+>hide /INTERNAL POLYLINE:Blade Loading Line, view=/VIEW:Turbo Regions View
+
+# CCL from EXPORT Turbo Chart Macro
+EXPORT:
+  Export File = C:/Users/PEY-YTF/Desktop/Studienarbeit/\
+studienarbeit_10081575_V2_TH_files/user_files/Ptot_BL050_LE4.csv
+  Export Chart Name = Blade Loading Chart
+  Overwrite = On
+END
+>export chart
+
+# CCL from Turbo Chart Macro begins (execute)
+> delete Blade Loading Surface, Blade Loading Line, Blade Loading Chart
+
+INTERNAL ISOSURFACE:Blade Loading Surface
+  Domain List = /DATA READER/CASE:Case V2_TH_LE2 LE3 LE4_001/DOMAIN:LE4
+  Value = 0.80
+  Variable = Span Normalized
+END
+INTERNAL POLYLINE:Blade Loading Line
+  Domain List = /DATA READER/CASE:Case V2_TH_LE2 LE3 LE4_001/DOMAIN:LE4
+  Option = Boundary Intersection
+  Boundary List = LE4_Blade
+  Location = Blade Loading Surface
+  Line Width = 2
+END
+CHART:Blade Loading Chart
+  Chart Type = XY
+  Chart Title = Blade Loading Chart
+  Chart X Axis Label = Streamwise (0-1)
+  Chart Y Axis Label = Total Pressure
+  CHART SERIES: Series 1
+    Chart Line Custom Data Selection = True
+    Chart X Variable = Streamwise (0-1)
+    Chart Y Variable = Total Pressure
+    Series Name = Blade Loading Chart Line
+    Location = Blade Loading Line
+    CHART LINE: Chart Line 1
+      Line Name = Blade Loading Chart Line
+      Chart Line Style = None
+      Auto Chart Line Colour = false
+      Auto Chart Symbol Colour = false
+      Chart Line Colour = 0, 0, 1
+      Chart Symbol Colour = 0, 0, 1
+      Chart Symbol Style = Ellipse
+    END
+  END
+END
+# CCL from Turbo Chart Macro ends (execute)
+
+>hide /INTERNAL POLYLINE:Blade Loading Line, view=/VIEW:Turbo Regions View
+
+# CCL from EXPORT Turbo Chart Macro
+EXPORT:
+  Export File = C:/Users/PEY-YTF/Desktop/Studienarbeit/\
+studienarbeit_10081575_V2_TH_files/user_files/Ptot_BL080_LE4.csv
+  Export Chart Name = Blade Loading Chart
+  Overwrite = On
+END
+>export chart
+
+# CCL from Turbo Chart Macro begins (execute)
+> delete Blade Loading Surface, Blade Loading Line, Blade Loading Chart
+
+INTERNAL ISOSURFACE:Blade Loading Surface
+  Domain List = /DATA READER/CASE:Case V2_TH_LE2 LE3 LE4_001/DOMAIN:LE4
+  Value = 0.95
+  Variable = Span Normalized
+END
+INTERNAL POLYLINE:Blade Loading Line
+  Domain List = /DATA READER/CASE:Case V2_TH_LE2 LE3 LE4_001/DOMAIN:LE4
+  Option = Boundary Intersection
+  Boundary List = LE4_Blade
+  Location = Blade Loading Surface
+  Line Width = 2
+END
+CHART:Blade Loading Chart
+  Chart Type = XY
+  Chart Title = Blade Loading Chart
+  Chart X Axis Label = Streamwise (0-1)
+  Chart Y Axis Label = Total Pressure
+  CHART SERIES: Series 1
+    Chart Line Custom Data Selection = True
+    Chart X Variable = Streamwise (0-1)
+    Chart Y Variable = Total Pressure
+    Series Name = Blade Loading Chart Line
+    Location = Blade Loading Line
+    CHART LINE: Chart Line 1
+      Line Name = Blade Loading Chart Line
+      Chart Line Style = None
+      Auto Chart Line Colour = false
+      Auto Chart Symbol Colour = false
+      Chart Line Colour = 0, 0, 1
+      Chart Symbol Colour = 0, 0, 1
+      Chart Symbol Style = Ellipse
+    END
+  END
+END
+# CCL from Turbo Chart Macro ends (execute)
+
+>hide /INTERNAL POLYLINE:Blade Loading Line, view=/VIEW:Turbo Regions View
+
+# CCL from EXPORT Turbo Chart Macro
+EXPORT:
+  Export File = C:/Users/PEY-YTF/Desktop/Studienarbeit/\
+studienarbeit_10081575_V2_TH_files/user_files/Ptot_BL095_LE4.csv
+  Export Chart Name = Blade Loading Chart
+  Overwrite = On
+END
+>export chart
+
+
+# Session file stopped:  2026/11/24 17:12:04
+

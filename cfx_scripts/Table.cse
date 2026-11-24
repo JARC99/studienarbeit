@@ -1,0 +1,41 @@
+# Session file started:  2026/11/24 17:12:36
+# CFX-25.2
+
+# To avoid unnecessary file pre-processing and modifications, include
+# COMMAND FILE at the top of your session file.
+# If it is not included, the file is assumed to be older and will be
+# modified for backward compatibility.
+COMMAND FILE:
+  CFX Post Version = 25.2
+END
+
+CALCULATOR:
+  Function = area
+  Location =
+  Case Name = Case V2_TH_LE2 LE3 LE4_001
+END
+
+CALCULATOR:
+  Function = area
+  Location =
+  Case Name = Case V2_TH_LE2 LE3 LE4_001
+END
+
+TABLE:Table 1
+  Export Table Only = True
+  Table Export HTML Title =
+  Table Export HTML Caption Position = Bottom
+  Table Export HTML Caption =
+  Table Export HTML Border Width = 1
+  Table Export HTML Cell Padding = 5
+  Table Export HTML Cell Spacing = 1
+  Table Export Lines = All
+  Table Export Trailing Separators = True
+  Table Export Separator = Tab
+END
+>table save=C:/Users/PEY-YTF/Desktop/Studienarbeit/\
+studienarbeit_10081575_V2_TH_files/user_files/table.cst, name=Table 1
+
+
+# Session file stopped:  2026/11/24 17:13:21
+
