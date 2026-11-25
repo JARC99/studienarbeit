@@ -168,7 +168,7 @@ def plot_vbh_massflow_ratios(
 
     ax.set_xticks(group_centers)
     ax.set_xticklabels(vbh_labels)
-    ax.set_ylabel("Massflow Ratio [%]")
+    ax.set_ylabel("VBH-to-CAV Massenstrom Verhältnis [%]")
     ax.legend(handles=legend_handles, loc="best", frameon=True)
 
     fig.tight_layout()
