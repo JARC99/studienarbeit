@@ -43,7 +43,7 @@ ax.set_ylim(bottom=0)
 ax.legend(labels=[f"{mesh_bsize:.2f}" for mesh_bsize in mesh_bsize_list], title="Mesh Body Sizing [mm]",
           alignment="left")
 
-tol_val = 0.01  # %
+tol_val = 0.1  # %
 fig1, ax1 = plt.subplots(1, 1)
 ax1.errorbar(mesh_bsize_array, eta_s_f_array, yerr=eta_s_f_array * tol_val / 100, fmt="o", ecolor="gray",
              elinewidth=1.5,
