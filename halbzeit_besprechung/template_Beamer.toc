@@ -2,11 +2,11 @@
 \beamer@sectionintoc {1}{Einleitung \& Motivation}{3}{0}{1}
 \beamer@sectionintoc {2}{Numerisches Setup}{7}{0}{2}
 \beamer@subsectionintoc {2}{1}{Referenz Setup}{8}{0}{2}
-\beamer@subsectionintoc {2}{2}{Proposed VBH Designs}{9}{0}{2}
-\beamer@subsectionintoc {2}{3}{Mesch Convergence Studies}{10}{0}{2}
-\beamer@sectionintoc {3}{Simulation Plan}{11}{0}{3}
-\beamer@sectionintoc {4}{Vorläufige Ergebnisse}{13}{0}{4}
-\beamer@subsectionintoc {4}{1}{VBH Kennzahlen}{14}{0}{4}
-\beamer@subsectionintoc {4}{2}{Hub-to-Shroud Plots}{15}{0}{4}
-\beamer@subsectionintoc {4}{3}{Streamwise Plots}{16}{0}{4}
-\beamer@sectionintoc {5}{Nächste Schritte}{17}{0}{5}
+\beamer@subsectionintoc {2}{2}{Entwickelte VBH Konstruktionen}{10}{0}{2}
+\beamer@subsectionintoc {2}{3}{Netz Konvergenz Studie}{12}{0}{2}
+\beamer@sectionintoc {3}{Simulation Plan}{14}{0}{3}
+\beamer@sectionintoc {4}{Vorläufige Ergebnisse}{16}{0}{4}
+\beamer@subsectionintoc {4}{1}{VBH Kennzahlen}{17}{0}{4}
+\beamer@subsectionintoc {4}{2}{Hub-to-Shroud Plots}{18}{0}{4}
+\beamer@subsectionintoc {4}{3}{Blade-Loading Plots}{19}{0}{4}
+\beamer@sectionintoc {5}{Nächste Schritte}{20}{0}{5}
