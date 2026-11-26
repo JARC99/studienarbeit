@@ -5,10 +5,18 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
+
 \usepackage{csquotes}
 \usepackage[backend=biber, citestyle=numeric-comp, bibstyle=ieee, sorting=none]{biblatex}
 \addbibresource{references.bib}
 \renewcommand*{\bibfont}{\scriptsize}
+\usepackage{graphicx}
+\usepackage{cleveref}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing, calligraphy}
 
 \AtBeginSection[]{
 	\begin{frame}{Inhaltsverzeichnis}
@@ -16,7 +24,7 @@
 	\end{frame}
 }
 
-\title{Halbzeitbesprechung}
+\title{Studienarbeit Halbzeitbesprechung}
 \author{José Alfredo Rosas Córdova}
 \institute[LUH]{%
 	\small Betreut von M.Sc. Josué Inocente Camarero Pueyo\\[1em]
@@ -32,89 +40,285 @@
 	\begin{frame}{Inhaltsverzeichnis}
 		\tableofcontents
 	\end{frame}
-
+	
 	\section{Einleitung \& Motivation}
-		\begin{frame}{Einleitung \& Motivation}
-			\begin{itemize}
-				\item Die immer noch weit verbreite Verwendung von Gasturbinen in verschiedenen Bereichen des menschliches Leben erfordert die Weiterentwicklung dieser Systeme mit der Ziel, ihre Betriebskosten und Umweltbelastung soweit wie möglich zu reduzieren.
-				
-				\item Die Minimierung von sekundären Strömungen und Mischverluste innerhalb der Maschine bietet immer noch eine gute Gelegenheit, den thermischen Wirkungsgrad weiter zu erhöhen \cite{farokhi2014}.
-				
-
-			\end{itemize}
-		\end{frame}
-		
-		\begin{frame}{Einleitung \& Motivation}
-			\begin{itemize}
-				
-				\item In \cite{palkus2023low} wurden zwei Lösungen entwickelt, um sekundär Strömungen innerhalb den OAS von LPT zu minimieren: Front Deflectors und Vane Bleed Holes (VBH).
-				
-				\item Von diesen zwei haben sich, explorativen numerischen Studien nach, VBH bezüglich der möglichen Effizienzsteigerung  als mehr versprechend erwiesen.
-				
-				\item Die Wirkungsgrdverbesserungen mittels des VBH-Konzepts wurde in \cite{camareropueyo2025reducing,camareropueyo2026comparison,camareropueyo2026robustness} mittels numerischer Optimizationstudien als Verbesserungsmöglichkeit für LPT weiterrecherchiert und bestätigt.
-				
-				\item Analog wurde die Optimierung der Wandkontouren der Leitschaufeln einer HDT in [CITA] durchgeführt, was auch eine gewisse Effizienzstereigerung ermöglicht hat.
-			\end{itemize}
-		\end{frame}
-		
-		\begin{frame}{Einleitung \& Motivation}
-			\begin{itemize}
-				\item Das Ziel dieser Studienarbeit ist dann die numerische Untersuchung von den Effekten der Umsetzung von VBH in einer Maschine mit voher optimierter Wandkontouren.
-				
-				\item Das Endergebnis von [CITA] wurde als Referenzsetup benutzt. Drei verschiedene VBH-Fälle wurden manuell gestaltet und in allen möglichen Permutation simuliert.
-			\end{itemize}
-		\end{frame}
-		
-		
+	\begin{frame}{Einleitung \& Motivation}
+		\begin{itemize}
+			\item Die immer noch weit verbreitete Verwendung von Gasturbinen in verschiedenen Bereichen des menschlichen Lebens erfordert die Weiterentwicklung dieser Systeme mit dem Ziel, ihre Betriebskosten und Umweltbelastung so weit wie möglich zu reduzieren.
+			
+			\item Die Minimierung von Sekundärströmungen und Mischverlusten innerhalb der Maschine bietet immer noch eine gute Gelegenheit, den thermischen Wirkungsgrad weiter zu erhöhen \cite{farokhi2014}.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Einleitung \& Motivation}
+		\begin{itemize}
+			\item In \cite{palkus2023low} wurden zwei Lösungen entwickelt, um Sekundärströmungen innerhalb der Leitschaufelreihen (OAS) von Niederdruckturbinen (LPT) zu minimieren: Front Deflectors und Vane Bleed Holes (VBH).
+			
+			\item Von diesen beiden haben sich explorativen numerischen Studien zufolge VBH bezüglich der möglichen Effizienzsteigerung als vielversprechender erwiesen.
+			
+			\item Die Wirkungsgradverbesserungen mittels des VBH-Konzepts wurden in \cite{camareropueyo2025reducing,camareropueyo2026comparison,camareropueyo2026robustness} mithilfe numerischer Optimierungsstudien als Verbesserungsmöglichkeit für LPT weiter untersucht und bestätigt.
+			
+			\item Analog wurde die Optimierung der Wandkonturen der Leitschaufeln einer Hochdruckturbine (HDT) in \cite{Bittner2020} durchgeführt, was ebenfalls eine gewisse Effizienzsteigerung ermöglicht hat.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Einleitung \& Motivation}
+		\begin{itemize}
+			\item Das Ziel dieser Studienarbeit ist die numerische Untersuchung der Effekte der Umsetzung von VBH in einer Maschine mit vorher optimierten Wandkonturen.
+			
+			\item Das Endergebnis aus \cite{Bittner2020} wurde als Referenzsetup genutzt. Drei verschiedene VBH-Fälle wurden manuell gestaltet und in allen möglichen Permutationen simuliert.
+		\end{itemize}
+	\end{frame}
+	
 	\section{Numerisches Setup}
-		\subsection{Referenz Setup}
-			\begin{frame}{Referenz Setup}
-				% Weitere Inhalte hier einfügen
-			\end{frame}
-			
-		\subsection{Proposed VBH Designs}
-			\begin{frame}{New VBH Designs}
-				% Weitere Inhalte hier einfügen
-			\end{frame}
+	\subsection{Referenz Setup}			
+	\begin{frame}{Referenz Setup}
+		\begin{itemize}
+			\item Das Referenzsetup besteht aus einer vierstufigen Hochdruckturbine mit konturierten Wänden.
+			\item VBHs wurden zu den drei letzten Stufen hinzugefügt.
+		\end{itemize}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{graphics/referenz_setup.png}
+			% \caption{}
+			\label{fig:referenz_setup}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Referenz Setup}
+		\begin{itemize}
+			\item Alle Randbedingungen wurden direkt aus \cite{Bittner2020} übernommen und sind in der folgenden Tabelle zusammengefasst.
+		\end{itemize}
 		
-		\subsection{Mesch Convergence Studies}
-			\begin{frame}{Mesh Convergence Studies}
-				\begin{itemize}
-					\item Wir hben \footcite{herbst2012richtlinie}
-				\end{itemize}
-			\end{frame}
-			
+		\begin{table}[h!]
+			\centering
+			{\scriptsize
+				\begin{tabular}{ll}
+					\toprule
+					\textbf{Randbedingung} & \textbf{Wert} \\
+					\midrule
+					PressureInlet & \qty{277100}{\Pa} \\
+					PressureOutlet & \qty{101325}{\Pa} \\
+					TemperatureInlet & \qty{414.85}{\K} \\
+					Drehzahl & \qty{5750.0}{\per\minute} \\
+					Walls & Adiabatic, Smooth\\
+					\bottomrule
+				\end{tabular}
+				% \caption{}
+				\label{tab:boundary_expressions}
+			}
+		\end{table}
+	\end{frame}
+	
+	\subsection{Entwickelte VBH Konstruktionen}
+	\begin{frame}{Entwickelte VBH Konstruktionen}
+		\begin{itemize}
+			\item Drei verschiedene VBH-Konstruktionen wurden entwickelt und simuliert. 
+			\item Laut \cite{palkus2023low} können Änderungen der Positionierung der Austrittsfläche der VBH entlang der Profilsehne zu Änderungen der Effizienzsteigerung führen. 
+			\item Demnach wurden zwei unterschiedliche Austrittsflächen für alle Fälle erprobt: am Throat des Gitters und am Inflektionspunkt.
+			\item Darüber hinaus wurde, um ein besseres Druckverhältnis schaffen zu können, eine dritte Konstruktion mit einer Eintrittsfläche entwickelt, die mit der Mitte der Kavität verbunden ist. 
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Entwickelte VBH Konstruktionen}
+		% Top row: two images side by side
+		\begin{columns}[T]
+			\begin{column}{0.48\textwidth}
+				\centering
+				\includegraphics[width=\linewidth, height=2.8cm, keepaspectratio]{graphics/LE2_TH.png}\\
+				{\footnotesize Austrittsfläche am Throat}
+			\end{column}
+			\hfill
+			\begin{column}{0.48\textwidth}
+				\centering
+				\includegraphics[width=\linewidth, height=2.8cm, keepaspectratio]{graphics/LE2_IP.png}\\
+				{\footnotesize Austrittsfläche am Inflection Point}
+			\end{column}
+		\end{columns}
+		
+		\vspace{0.3cm}
+		
+		% Bottom row: one centered image
+		\begin{center}
+			\includegraphics[width=0.48\textwidth, height=2.8cm, keepaspectratio]{graphics/LE2_wCAV.png}\\
+			{\footnotesize Eintrittsfläche an der Kavität-Mitte}
+		\end{center}
+	\end{frame}
+	
+	\subsection{Netz Konvergenz Studie}
+	\begin{frame}{Netz Konvergenz Studie}
+		\begin{itemize}
+			\item Eine Netzkonvergenzstudie wurde nach den in \cite{herbst2012richtlinie} erläuterten Richtlinien durchgeführt.
+			\item Entsprechend dem Ziel der Untersuchung wurde der Total-to-Total-isentrope Wirkungsgrad als Konvergenzkriterium gewählt.
+		\end{itemize}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.5\linewidth]{graphics/mesh_convergence.png}
+			% \caption{}
+			\label{fig:mesh_convergenz}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{itemize}
+			\item Die Ergebnisse der CEL-Studie sind in der folgenden Tabelle zusammengefasst.
+		\end{itemize}
+		\begin{table}[htbp]
+			\centering
+			{\tiny
+				\begin{tabular}{lc}
+					\toprule
+					Variable & Wert \\
+					\midrule
+					$r_{32}$ & 1.3565 \\
+					$r_{21}$ & 1.6143 \\
+					$f_{c, 1}$ & 91.2642 \\
+					$f_{c, 2}$ & 91.2811 \\
+					$f_{c, 3}$ & 91.2826 \\
+					$p$ & -4.6218 \\
+					$f_e$ & 91.2831 \\
+					$F_s$ & 1.25 \\
+					$GCI_1$ & -2.59e-04 \\
+					$GCI_2$ & -2.83e-05 \\
+					$GCI_3$ & -6.93e-06 \\
+					$GCI_2 / (GCI_1 r_{21}^p)$ & 0.9998 \\
+					$EERE_1$ & 2.07e-04 \\
+					$EERE_2$ & 2.27e-05 \\
+					$EERE_3$ & 5.54e-06 \\
+					\midrule
+					$f_{e, p=1}$ & 91.2368 \\
+					$GCI_{1, p=1}$ & 3.76e-04 \\
+					$GCI_{2, p=1}$ & 6.01e-05 \\
+					$GCI_{3, p=1}$ & 8.15e-05 \\
+					$EERE_{1, p=1}$ & 3.01e-04 \\
+					$EERE_{2, p=1}$ & 4.86e-04 \\
+					$EERE_{3, p=1}$ & 5.03e-04 \\
+					\bottomrule
+			\end{tabular}}
+		\end{table}
+	\end{frame}
 	
 	\section{Simulation Plan}
-		\begin{frame}{Simulation Plan}
-			% Meilensteine und Zeitplan hier einfügen
-		\end{frame}
-		
+	\begin{frame}[fragile]{Simulation Plan}
+		\centering
+		\resizebox{\textwidth}{!}{%
+			\begin{tikzpicture}[
+				font=\sffamily\footnotesize,
+				brace/.style={decorate, decoration={calligraphic brace, amplitude=6pt, raise=2pt}, thick},
+				conn/.style={thick}
+				]
+				
+				% Left root node
+				\node[align=left, font=\sffamily\bfseries\footnotesize] (root) at (0, 0) {VBH\\Konstruktionen};
+				
+				% Main curly brace on the left
+				\draw[brace] (1.45, -3.6) -- (1.45, 3.6);
+				
+				% Middle level nodes
+				\node[anchor=west, font=\sffamily\bfseries\footnotesize] (m1) at (1.7,  3.2) {Throat Austritt};
+				\node[anchor=west, font=\sffamily\bfseries\footnotesize] (m2) at (1.7,  0.0) {Infl. Punkt Austritt};
+				\node[anchor=west, font=\sffamily\bfseries\footnotesize] (m3) at (1.7, -3.2) {Mittiger Eintritt};
+				
+				% All-green list for top two branches using xcolor's \textcolor
+				\def\lelistgreen{%
+					\textcolor{green!60!black}{LE2}\\
+					\textcolor{green!60!black}{LE3}\\
+					\textcolor{green!60!black}{LE4}\\
+					\textcolor{green!60!black}{LE2 \& LE3}\\
+					\textcolor{green!60!black}{LE2 \& LE4}\\
+					\textcolor{green!60!black}{LE3 \& LE4}\\
+					\textcolor{green!60!black}{LE2 \& LE3 \& LE4}%
+				}
+				
+				% Mixed green/red list for bottom branch ("Mittiger Eintritt") using \textcolor
+				\def\lelistmixed{%
+					\textcolor{green!60!black}{LE2}\\
+					\textcolor{green!60!black}{LE3}\\
+					\textcolor{green!60!black}{LE4}\\
+					\textcolor{red!80!black}{LE2 \& LE3}\\
+					\textcolor{red!80!black}{LE2 \& LE4}\\
+					\textcolor{red!80!black}{LE3 \& LE4}\\
+					\textcolor{green!60!black}{LE2 \& LE3 \& LE4}%
+				}
+				
+				\node[anchor=west, align=left, font=\sffamily\scriptsize] (r1) at (7.4,  3.2) {\lelistgreen};
+				\node[anchor=west, align=left, font=\sffamily\scriptsize] (r2) at (7.4,  0.0) {\lelistgreen};
+				\node[anchor=west, align=left, font=\sffamily\scriptsize] (r3) at (7.4, -3.2) {\lelistmixed};
+				
+				% Right-side curly braces centered on y = 3.2, 0.0, -3.2
+				\draw[brace] (7.25,  2.05) -- (7.25,  4.35);
+				\draw[brace] (7.25, -1.15) -- (7.25,  1.15);
+				\draw[brace] (7.25, -4.35) -- (7.25, -2.05);
+				
+				% Strictly horizontal connector lines from each middle node to its brace
+				\draw[conn] (m1.east) -- (7.0,  3.2);
+				\draw[conn] (m2.east) -- (7.0,  0.0);
+				\draw[conn] (m3.east) -- (7.0, -3.2);
+				
+			\end{tikzpicture}%
+		}
+	\end{frame}
+	
 	\section{Vorläufige Ergebnisse}
-		\subsection{VBH Kennzahlen}
-		\begin{frame}{Simulation Plan}
-			% Meilensteine und Zeitplan hier einfügen
+	\subsection{VBH Kennzahlen}
+	\begin{frame}{VBH Kennzahlen}
+		\begin{itemize}
+			\item In \cite{palkus2023low} werden verschiedene Kennzahlen genutzt, um die Leistung von den VBHs zu kennzeichnen, hauptsächlich:
+			\begin{itemize}
+				\item VBH-Massenstrom und Kavität-Massenstrom Verhältnis
+				\item Drückverhältnis innerhalb des VBHs
+			\end{itemize}
+			\item Die erste von diesen Kennzahlen wird für das erste Fall in der untere Diagramm zusammengefasst.
+		\end{itemize}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.5\linewidth]{graphics/VBH_massflow_ratio_VBH_TH.png}
+				% \caption{}
+				\label{fig:vbh}
+			\end{figure}
+		
+	\end{frame}
+	
+	\subsection{Hub-to-Shroud Plots}
+		\begin{frame}{Hub-to-Shroud Plots}
+			\begin{itemize}
+				\item Die Effekte der VBHs auf der Strömmung in der Nähe vom Gehäuse wird sowohl mittels Hub-to-Shroud als auch Blade-Loading Diagrammen veranschaulicht.
+			\end{itemize}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.7\linewidth]{graphics/LE2_outlet_H2S_LE2_vs_LE2-LE3_vs_LE2-LE4_vs_LE2-LE3-LE4.png}
+				% \caption{}
+				\label{fig:hub-to-shorud}
+			\end{figure}
 		\end{frame}
 		
-		\subsection{Hub-to-Shroud Plots}
-		\begin{frame}{Simulation Plan}
-			% Meilensteine und Zeitplan hier einfügen
-		\end{frame}
-		
-		
-		\subsection{Streamwise Plots}
-		\begin{frame}{Simulation Plan}
-			% Meilensteine und Zeitplan hier einfügen
-		\end{frame}
-		
+	\subsection{Blade-Loading Plots}
+\begin{frame}{Blade-Loading Plots}
+	\begin{columns}[T] % [T] aligns columns at the top
+		\begin{column}{0.48\textwidth}
+			\centering
+			\includegraphics[width=\linewidth, height=4cm, keepaspectratio]{graphics/Ptot_BL050_LE2_LE2-LE3-LE4.png}
+			{\footnotesize Blade Loading bei \qty{50}{\percent} Radius}
+		\end{column}
+		\hfill
+		\begin{column}{0.48\textwidth}
+			\centering
+			\includegraphics[width=\linewidth, height=4cm, keepaspectratio]{graphics/Ptot_BL080_LE2_LE2-LE3-LE4.png}
+			{\footnotesize Blade Loading bei \qty{95}{\percent} Radius}
+		\end{column}
+	\end{columns}
+\end{frame}
 	
 	\section{Nächste Schritte}
 	\begin{frame}{Nächste Schritte}
-		% Meilensteine und Zeitplan hier einfügen
+		\begin{itemize}
+			\item Restliche drei Simulationen durchführen.
+			\item Auswertung der Ergebnisse mithilfe der bereits aufgenommenen \texttt{.cst}- und \texttt{.cse}-Dateien erledigen.
+			\item Diagramme zum Vergleich erstellen und Zusammenfassungen ziehen.
+			\item Bericht fertigstellen.
+		\end{itemize}
 	\end{frame}
 	
-	
-		
 	\begin{frame}[allowframebreaks]{Literatur}
 		\printbibliography
 	\end{frame}

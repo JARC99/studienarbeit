@@ -1,0 +1,58 @@
+\frametitle{Simulation Plan}
+\centering
+		\resizebox{\textwidth}{!}{%
+			\begin{tikzpicture}[
+				font=\sffamily\footnotesize,
+				brace/.style={decorate, decoration={calligraphic brace, amplitude=6pt, raise=2pt}, thick},
+				conn/.style={thick}
+				]
+				
+				% Left root node
+				\node[align=left, font=\sffamily\bfseries\footnotesize] (root) at (0, 0) {VBH\\Konstruktionen};
+				
+				% Main curly brace on the left
+				\draw[brace] (1.45, -3.6) -- (1.45, 3.6);
+				
+				% Middle level nodes
+				\node[anchor=west, font=\sffamily\bfseries\footnotesize] (m1) at (1.7,  3.2) {Throat Austritt};
+				\node[anchor=west, font=\sffamily\bfseries\footnotesize] (m2) at (1.7,  0.0) {Infl. Punkt Austritt};
+				\node[anchor=west, font=\sffamily\bfseries\footnotesize] (m3) at (1.7, -3.2) {Mittiger Eintritt};
+				
+				% All-green list for top two branches using xcolor's \textcolor
+				\def\lelistgreen{%
+					\textcolor{green!60!black}{LE2}\\
+					\textcolor{green!60!black}{LE3}\\
+					\textcolor{green!60!black}{LE4}\\
+					\textcolor{green!60!black}{LE2 \& LE3}\\
+					\textcolor{green!60!black}{LE2 \& LE4}\\
+					\textcolor{green!60!black}{LE3 \& LE4}\\
+					\textcolor{green!60!black}{LE2 \& LE3 \& LE4}%
+				}
+				
+				% Mixed green/red list for bottom branch ("Mittiger Eintritt") using \textcolor
+				\def\lelistmixed{%
+					\textcolor{green!60!black}{LE2}\\
+					\textcolor{green!60!black}{LE3}\\
+					\textcolor{green!60!black}{LE4}\\
+					\textcolor{red!80!black}{LE2 \& LE3}\\
+					\textcolor{red!80!black}{LE2 \& LE4}\\
+					\textcolor{red!80!black}{LE3 \& LE4}\\
+					\textcolor{green!60!black}{LE2 \& LE3 \& LE4}%
+				}
+				
+				\node[anchor=west, align=left, font=\sffamily\scriptsize] (r1) at (7.4,  3.2) {\lelistgreen};
+				\node[anchor=west, align=left, font=\sffamily\scriptsize] (r2) at (7.4,  0.0) {\lelistgreen};
+				\node[anchor=west, align=left, font=\sffamily\scriptsize] (r3) at (7.4, -3.2) {\lelistmixed};
+				
+				% Right-side curly braces centered on y = 3.2, 0.0, -3.2
+				\draw[brace] (7.25,  2.05) -- (7.25,  4.35);
+				\draw[brace] (7.25, -1.15) -- (7.25,  1.15);
+				\draw[brace] (7.25, -4.35) -- (7.25, -2.05);
+				
+				% Strictly horizontal connector lines from each middle node to its brace
+				\draw[conn] (m1.east) -- (7.0,  3.2);
+				\draw[conn] (m2.east) -- (7.0,  0.0);
+				\draw[conn] (m3.east) -- (7.0, -3.2);
+				
+			\end{tikzpicture}%
+		}

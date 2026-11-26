@@ -243,6 +243,42 @@
       \field{venue}{Montreal, Canada}
       \field{year}{2026}
     \endentry
+    \entry{Bittner2020}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=94151c063a5451e171682d0cc6bdceb2}{%
+           family={Bittner},
+           familyi={B\bibinitperiod},
+           given={Simon\bibnamedelima Leonardo},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Gottfried Wilhelm Leibniz Universität Hannover}%
+      }
+      \list{location}{1}{%
+        {Hannover}%
+      }
+      \strng{namehash}{94151c063a5451e171682d0cc6bdceb2}
+      \strng{fullhash}{94151c063a5451e171682d0cc6bdceb2}
+      \strng{fullhashraw}{94151c063a5451e171682d0cc6bdceb2}
+      \strng{bibnamehash}{94151c063a5451e171682d0cc6bdceb2}
+      \strng{authorbibnamehash}{94151c063a5451e171682d0cc6bdceb2}
+      \strng{authornamehash}{94151c063a5451e171682d0cc6bdceb2}
+      \strng{authorfullhash}{94151c063a5451e171682d0cc6bdceb2}
+      \strng{authorfullhashraw}{94151c063a5451e171682d0cc6bdceb2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Experimentelle Validierung numerischer Optimierungen des Schaufelpfades einer Hochdruck-Dampfturbine}
+      \field{type}{phdthesis}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://d-nb.info/1216240981/34
+      \endverb
+      \verb{url}
+      \verb https://d-nb.info/1216240981/34
+      \endverb
+    \endentry
     \entry{herbst2012richtlinie}{report}{}{}
       \name{author}{1}{}{%
         {{hash=1beb1982a2d36dca885fa3ba7925fbec}{%
@@ -262,8 +298,8 @@
       \strng{authornamehash}{1beb1982a2d36dca885fa3ba7925fbec}
       \strng{authorfullhash}{1beb1982a2d36dca885fa3ba7925fbec}
       \strng{authorfullhashraw}{1beb1982a2d36dca885fa3ba7925fbec}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{30}
