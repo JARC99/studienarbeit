@@ -224,7 +224,7 @@ def _plot_grouped_vbh_bars(
     ax.set_xticks(group_centers)
     ax.set_xticklabels(vbh_labels)
     ax.set_ylabel(ylabel)
-    ax.legend(handles=legend_handles, title="CASES", loc="best", frameon=True)
+    ax.legend(handles=legend_handles, loc="best", frameon=True)
 
     fig.tight_layout()
     plt.show()
@@ -284,7 +284,7 @@ def _plot_efficiency_by_case(
     ax.set_xticks(x_pos)
     ax.set_xticklabels(valid_cases, rotation=20, ha="right")
     ax.set_ylabel("Isentropic Efficiency [%]")
-    ax.legend(handles=handles_with_ref, title="CASES", loc="best", frameon=True)
+    ax.legend(handles=handles_with_ref, loc="best", frameon=True)
 
     fig.tight_layout()
     plt.show()
