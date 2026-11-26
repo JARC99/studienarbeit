@@ -16,20 +16,60 @@ DEFAULT_SAVE_DIR = Path(
     r"C:\Users\PEY-YTF\Desktop\Studienarbeit\studienarbeit\halbzeit_besprechung\graphics"
 )
 
+# Each entry: (candidate_filenames_tuple, xlabel, title, scale_factor, max_xticks)
 METRICS = [
-    ("alpha_out_H2S_LE2.csv", "Flow Angle [°]", "Velocity Flow Angle ACA", 1.0),
-    ("Ma_out_H2S_LE2.csv", "Mach Number", "Mach Number ACA", 1.0),
-    ("Ptot_out_H2S_LE2.csv", "Total Pressure [$10^5$ Pa]", "Total Pressure ACA", 1e5),
+    (
+        ("alpha_out_H2S_LE2.csv",),
+        "Flow Angle [°]",
+        "Velocity Flow Angle ACA",
+        1.0,
+        None,
+    ),
+    (
+        ("Ma_out_H2S_LE2.csv",),
+        "Mach Number",
+        "Mach Number ACA",
+        1.0,
+        None,
+    ),
+    (
+        ("Ptot_out_H2S_LE2.csv",),
+        "Total Pressure [$10^5$ Pa]",
+        "Total Pressure ACA",
+        1e5,
+        3,
+    ),
+    (
+        (
+            "TurbKE_out_H2S_LE2.csv",
+            "TurbKE_in_H2S_LE2.csv",
+            "tke_out_H2S_LE2.csv",
+            "TKE_out_H2S_LE2.csv",
+        ),
+        "Turbulent Kinetic Energy [m²/s²]",
+        "Turbulence Kinetic Energy ACA",
+        1.0,
+        3,
+    ),
 ]
 
 
 def load_cfx_csv(filepath: Path) -> pd.DataFrame:
     """Load CFX chart CSV starting after the [Data] section header."""
     lines = filepath.read_text(encoding="utf-8", errors="replace").splitlines()
-    data_idx = next(i for i, line in enumerate(lines) if line.strip() == "[Data]")
-    df = pd.read_csv(filepath, skiprows=data_idx + 1)
+    data_idx = next(i for i, line in enumerate(lines) if line.strip().lower() == "[data]")
+    df = pd.read_csv(filepath, skiprows=data_idx + 1, skipinitialspace=True)
     df.columns = [c.strip() for c in df.columns]
     return df
+
+
+def resolve_metric_file(case_dir: Path, candidates: tuple[str, ...]) -> Path | None:
+    """Return the first existing CSV path from candidate names in case_dir."""
+    for name in candidates:
+        candidate_path = case_dir / name
+        if candidate_path.exists():
+            return candidate_path
+    return None
 
 
 def select_folders_dialog(
@@ -79,22 +119,29 @@ def select_folders_dialog(
     return ref_dir, selected_cases
 
 
-def plot_comparison_1x3(
+def plot_comparison_1x4(
     ref_dir: Path, cases: list[tuple[str, Path]], save_path: Path | None = None
 ) -> None:
     all_cases = [("Reference", ref_dir)] + cases
-    fig, axes = plt.subplots(1, 3, sharey=True)
+    fig, axes = plt.subplots(1, 4, sharey=True, figsize=(12.5, 4.5))
 
-    for ax, (filename, xlabel, title, scale_factor) in zip(axes, METRICS):
-        plotted = False
+    for ax, (candidates, xlabel, title, scale_factor, max_xticks) in zip(
+        axes, METRICS
+    ):
         for label, case_dir in all_cases:
-            csv_path = case_dir / filename
-            if not csv_path.exists():
-                print(f"[Warning] Missing '{filename}' in '{label}' ({case_dir})")
+            csv_path = resolve_metric_file(case_dir, candidates)
+            if csv_path is None:
+                print(
+                    f"[Warning] Missing {candidates[0]} in '{label}' ({case_dir})"
+                )
                 continue
 
             df = load_cfx_csv(csv_path)
             val_col = [c for c in df.columns if c != "Span Normalized"][0]
+            df[val_col] = pd.to_numeric(df[val_col], errors="coerce")
+            df["Span Normalized"] = pd.to_numeric(
+                df["Span Normalized"], errors="coerce"
+            )
             df = df.dropna(subset=["Span Normalized", val_col]).sort_values(
                 by="Span Normalized"
             )
@@ -108,14 +155,13 @@ def plot_comparison_1x3(
                 linewidth=linewidth,
                 label=label,
             )
-            plotted = True
 
         ax.set_xlabel(xlabel)
         # ax.set_title(title)
+        if max_xticks is not None:
+            ax.xaxis.set_major_locator(ticker.MaxNLocator(nbins=max_xticks))
 
-        axes[-1].legend(loc="lower right")
-
-    axes[2].xaxis.set_major_locator(ticker.MaxNLocator(nbins=3))
+    axes[-1].legend(loc="lower right")
     axes[0].set_ylabel("Relative Channel Height")
 
     fig.tight_layout()
@@ -135,7 +181,7 @@ if __name__ == "__main__":
     if ref_folder and comparison_folders:
         case_names = "_vs_".join(label for label, _ in comparison_folders)
         out_file = DEFAULT_SAVE_DIR / f"LE2_outlet_H2S_{case_names}.png"
-        plot_comparison_1x3(
+        plot_comparison_1x4(
             ref_dir=ref_folder,
             cases=comparison_folders,
             save_path=out_file,
