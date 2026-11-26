@@ -315,7 +315,7 @@ def run_table_summaries(
     ax.set_xticks(group_centers)
     ax.set_xticklabels(vbh_labels)
     ax.set_ylabel("VBH-to-CAV Mass Flow Ratio [%]")
-    ax.legend(handles=legend_handles, title="CASES", loc="best", frameon=True)
+    ax.legend(handles=legend_handles, loc="best", frameon=True)
     fig.tight_layout()
     _save_and_close_current(
         case_out_dir / "VBH-to-CAV_m_dot_rat.pdf", show_plots=show_plots
@@ -346,7 +346,7 @@ def run_table_summaries(
     ax.set_xticks(group_centers)
     ax.set_xticklabels(vbh_labels)
     ax.set_ylabel("Total Pressure Ratio [-]")
-    ax.legend(handles=legend_handles, title="CASES", loc="best", frameon=True)
+    ax.legend(handles=legend_handles, loc="best", frameon=True)
     fig.tight_layout()
     _save_and_close_current(case_out_dir / "VBH_p_tot_rat.pdf", show_plots=show_plots)
 
@@ -387,7 +387,7 @@ def run_table_summaries(
         ax.set_xticks(x_pos)
         ax.set_xticklabels(valid_cases, rotation=20, ha="right")
         ax.set_ylabel("Isentropic Efficiency [%]")
-        ax.legend(handles=handles_with_ref, title="CASES", loc="best", frameon=True)
+        ax.legend(handles=handles_with_ref, loc="best", frameon=True)
         fig.tight_layout()
         _save_and_close_current(case_out_dir / "eta_iso.pdf", show_plots=show_plots)
 
